@@ -91,6 +91,9 @@ public class PlayerControl : MonoBehaviour
     {
         if (this.gameObject.GetComponent<Health>().health<=0)
         {
+            speed = 0;
+            BulletSpeed = 0;
+            playerCollider.isTrigger = true;
             audiosrc.volume = 0.20f;
             audiosrc.PlayOneShot(audioclp_exp);
             PlayerAnimation.SetBool("bum", true);
